@@ -6,12 +6,12 @@ def create_app(config_name):
     app.config.from_object(config_options[config_name])
  
     #registering the blueprint
-    # from webapp.auth import auth as blue_print
-    # app.register_blueprint(blue_print)
+    from webapp.auth import auth as blue_print
+    app.register_blueprint(blue_print)
     
     #registering the blueprint
-    from webapp.main import main as blue_print
-    app.register_blueprint(blue_print)
+    # from webapp.main import main as blue_print
+    # app.register_blueprint(blue_print)
 
     #Setting up configuration
     from .request import configure_request
