@@ -37,9 +37,3 @@ def signIn():
 def signOut():
     logout_user()
     return redirect(url_for('main.home')) 
-
-@auth.route("/account")
-@login_required
-def Account():
-    image_file = url_for('static',filename='/images/')
-    return render_template('Profile.html',  title="Profile", image_file= image_file)
