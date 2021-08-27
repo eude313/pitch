@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  {% include "nav.html" %}
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 card-body">
+          <form method="POST" action="" enctype="multipart/form-data">
+                  {{ form.hidden_tag() }}
+              <fieldset class="form-group text-center">
+                <legend class="form" style="font-family: 'Signika Negative', sans-serif; margin-left:-6rem;">Create blog </legend>
+
+                <!-- title input -->
+                  <div class="form-outline mb-4">
+                      
+                      {% if form.title.errors %}
+                      {{ form.title( class="form-control-lg is_invalid" ) }}
+                          <div class="invalid_feedback">
+                              {% for error in form.title.errors %}
+                                  <span class="">{{ error }}</span>
+                              {% endfor %}
+                          </div>
+                      {% else %}
+                          {{ form.title( class="form-control-lg",style="font-family: 'Playball', cursive;" ) }}
+                      {% endif %}
+                  {{ form.title.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                  </div> 
+
+                <!-- content input -->
+                  <div class="form-outline ml-4 mb-4" style="margin-left:-1.5rem;">
+                    
+                      {% if form.content.errors %}
+                          {{ form.content( class="form-control-lg is_invalid" ) }}
+                          <div class="invalid_feedback">
+                              {% for error in form.content.errors %}
+                                  <span> {{ error }}</span>
+                              {% endfor %}
+                          </div>
+                      {% else %}
+                          {{ form.content( class="form-control-lg" ) }}
+                      {% endif %}
+                  {{ form.content.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                  </div>
+              </fieldset>
+              <br>
+              <!-- Submit button -->
+              <div class="text-center">
+                  {{ form.submit( class="btn btn-primary btn-block mb-4", style="width: 33%; margin-left: 3.5rem;") }}
+              </div>
+          </form>
+        </div>
+        <div class="col-md-4"></div> 
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %} 
+    {% include "footer.html" %}
+{% endblock %}
