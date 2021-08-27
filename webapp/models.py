@@ -1,44 +1,34 @@
+from flask_sqlalchemy import sqlalchemy
+from flask import app
 from datetime import datetime
-from webapp import db
-from werkzeug.security import generate_password_hash,check_password_hash
+from webapp import db, login_manager
 from flask_login import UserMixin
-from . import login_manager
 
 
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-
-class User(db.Model, UserMixin):
-    '''
-     User class to define user Objects
-    '''
-    __tablename__ = 'user'
+    
+# db = sqlalchemy(app)
+class User( db.Model,UserMixin ):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20),unique=True, nullable=False)
-    email = db.Column(db.String(120),unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship('Notes', backref='author', lazy=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default= "before.jpg")
+    password =db.Column(db.String(60), nullable=False)
+    post = db.relationship('Post', backref='author', lazy=True)
+    
+    #how the object is printed when printed out
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}')"
-
-
-class Post (db.Model):
-    '''
-     Posts class to define Notes Objects
-    '''
+        return f"User"("{self.username}", "{self.email}", "{self.image_file}")
+    
+class Post( db.Model ):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    posts= db.Column(db.Text, nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
     def __repr__(self):
-        return f"Posts('{self.title}')"
-
-
-
-
-
-
+        return f"Post"("{self.title}", "{self.date_posted}")
+    

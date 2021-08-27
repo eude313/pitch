@@ -20,11 +20,11 @@ def create_app(config_name):
     login_manager.init_app(app)
     
     #registering the blueprint
-    from webapp.auth import auth as blue_print
+    from .auth import auth as blue_print
     app.register_blueprint(blue_print)
     
     #registering the blueprint
-    from webapp.main import main as blue_print
+    from .main import main as blue_print
     app.register_blueprint(blue_print)
 
     #Setting up configuration
