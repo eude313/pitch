@@ -42,7 +42,7 @@ def signOut():
 @auth.route('/blogs')
 def blogs():
     posts= Post.query.all()
-    return render_template('blogs.html', posts=posts)
+    return render_template('pitches.html', posts=posts)
 
 @auth.route('/post/new', methods=['POST', 'GET'])
 @login_required
