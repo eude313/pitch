@@ -1,5 +1,5 @@
 from . import main
-from flask import render_template, url_for
+from flask import render_template
 
 # landing page
 @main.route('/')
