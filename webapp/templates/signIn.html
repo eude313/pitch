@@ -10,18 +10,18 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
           {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">{{ message }}</div>
+            <div class="alert alert-{{ category }}" style="font-family: 'Courgette', cursive;">{{ message }}</div>
           {% endfor %}
         {% endif %}
       {% endwith %}
     <form method="POST" action="">
             {{ form.hidden_tag() }}
         <fieldset class="form-group text-center">
-            <legend class="form" style="font-family: 'Playball', cursive; font-size:1.4rem;">log in !</legend> 
+            <legend class="form" style=" font-family: 'Courgette', cursive;  font-size:1.4rem;">log in !</legend> 
 
             <!-- Email input -->
             <div class="form-outline ml-4 mb-4">
-                {{ form.email.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                {{ form.email.label( class="form-control-label",style=" font-family: 'Courgette', cursive; " ) }}
                 {% if form.email.errors %}
                     {{ form.email( class="form-control-lg is_invalid" ) }}
                     <div class="invalid_feedback">
@@ -37,7 +37,7 @@
 
             <!-- Password input -->
             <div class="form-outline mb-4" style="margin-left: 10px;">
-                {{ form.password.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                {{ form.password.label( class="form-control-label",style=" font-family: 'Courgette', cursive; " ) }}
                 {% if form.password.errors %}
                     {{ form.password( class="form-control-lg is_invalid" ) }}
                     <div class="invalid_feedback">
@@ -52,7 +52,7 @@
             <!-- Checkbox -->
             <div class="form-check d-flex justify-content-center mb-4">
                 {{ form.remember( class="form-check-input" ) }}
-                {{ form.remember.label( class="form-check-label",style="font-family: 'Playball', cursive;") }}
+                {{ form.remember.label( class="form-check-label",style="font-family: 'Courgette', cursive;  ") }}
 
             </div>
 
@@ -60,15 +60,15 @@
             
         </fieldset>
         <div class="container pl-7" style="width:20%;">
-            {{ form.submit( class="btn btn-primary btn-block mb-4", style="margin-left: 10px;") }}
+            {{ form.submit( class="btn btn-primary btn-block mb-4", style="font-family: 'Courgette', cursive;   margin-left: 10px;") }}
             <small class="text-muted ml-2">
-            <a href="#"  style=" font-family: 'Playball', cursive;">Forgot Password?</a>
+            <a href="#"  style=" font-family: 'Lobster', cursive;">Forgot Password?</a>
             </small> <br>
             
         </div>
         <div class="text-center">
         <small class="text-muted ml-2">
-            <a href="{{ url_for('auth.signUp')}}"  style=" font-family: 'Playball', cursive; margin-left: 10px;">Sign In </a>if don't have an account
+            <a href="{{ url_for('auth.signUp')}}"  style="font-family: 'Lobster', cursive; margin-left: 10px;">Sign In </a> <span style="font-family: 'Courgette', cursive;  "> if don't have an account</span>
             </small>
         </div>
     </form>
