@@ -22,18 +22,19 @@
       <!-- Left links -->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('main.home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pitches</a>
+          <a class="nav-link" href="{{ url_for('auth.blogs') }}">Pitches</a>
         </li>
         <!-- Navbar dropdown -->
         {% if current_user.is_authenticated %}
-            <li class="nav-item">
-              <a style="margin-left:1rem;text-shadow: 2px 1px 1px black; font-family: 'Playball', cursive; font-size:1.4rem;" class="nav-link" href="{{ url_for('auth.post') }}">Add Pitches</a>
-            </li> 
-            <a href="{{ url_for('auth.signOut') }}"><button  type="button" class="btn btn-success btn-rounded" style="font-family: 'Playball', cursive; font-size:1rem;margin-left:1rem;">log out</button></a>
-          {% else %}
+          <li class="nav-item">
+            <a style="margin-left:1rem;text-shadow: 2px 1px 1px black; font-family: 'Playball', cursive; font-size:1.4rem;" class="nav-link" href="{{ url_for('auth.post') }}">Add Pitches</a>
+          </li> 
+          <a href="{{ url_for('auth.signOut') }}"><button  type="button" class="btn btn-success btn-rounded" style="font-family: 'Playball', cursive; font-size:1rem;margin-left:1rem;">log out</button></a>
+        {% else %}
+          <!-- Navbar dropdown -->
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -48,10 +49,10 @@
             <!-- Dropdown menu -->
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="{{ url_for('auth.signUp') }}">signUp</a>
+                <a class="dropdown-item" href="{{ url_for('auth.signUp')}}">Sign Up</a>
               </li>
               <li>
-                <a class="dropdown-item" href="{{ url_for('auth.signIn') }}">Sign In</a>
+                <a class="dropdown-item" href="{{ url_for('auth.signIn')}}">Sign In</a>
               </li>
             </ul>
           </li>
@@ -63,7 +64,6 @@
   </div>
   <!-- Container wrapper -->
 </nav>
-
 
 
 

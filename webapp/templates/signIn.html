@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block navbar %}
-    {% include "nav.html" %}
+    {% include "navbar.html" %}
 {% endblock %}
 
 {% block content %} 
@@ -63,9 +63,14 @@
             {{ form.submit( class="btn btn-primary btn-block mb-4", style="margin-left: 10px;") }}
             <small class="text-muted ml-2">
             <a href="#"  style=" font-family: 'Playball', cursive;">Forgot Password?</a>
+            </small> <br>
+            
+        </div>
+        <div class="text-center">
+        <small class="text-muted ml-2">
+            <a href="{{ url_for('auth.signUp')}}"  style=" font-family: 'Playball', cursive; margin-left: 10px;">Sign In </a>if don't have an account
             </small>
         </div>
-        
     </form>
 </div>
   
