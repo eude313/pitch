@@ -28,7 +28,7 @@ def signIn():
         user = User.query.filter_by(email= form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
            login_user(user, remember=form.remember.data)
-           return redirect(url_for('home')) 
+           return redirect(url_for('main.home')) 
         else:
             flash('login unsuccessful. please check your email or password.', 'danger')
     return render_template('signIn.html', form= form, title="signIn")
