@@ -20,7 +20,7 @@ class User( db.Model,UserMixin ):
     
     #how the object is printed when printed out
     def __repr__(self):
-        return f"User"("{self.username}", "{self.email}")
+        return self.username
     
 class Post( db.Model ):
     id = db.Column(db.Integer, primary_key=True)
@@ -29,5 +29,5 @@ class Post( db.Model ):
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     def __repr__(self):
-        return f"Post"("{self.title}", "{self.date_posted}")
+        return self.title
     
