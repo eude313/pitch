@@ -8,14 +8,14 @@
  <div class="container">
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4 card-body">
+        <div class="col-md-4 card-body" style="font-family: 'Courgette', cursive; ">
           <form method="POST" action="" enctype="multipart/form-data">
                   {{ form.hidden_tag() }}
               <fieldset class="form-group text-center">
-                <legend class="form" style="font-family: 'Signika Negative', sans-serif; margin-left:-6rem;">Create blog </legend>
+                <legend class="form text-center" style="margin-left:-2.9rem;  font-size:1.4rem;">Create Pitch </legend>
 
                 <!-- title input -->
-                  <div class="form-outline mb-4">
+                  <div class="form-outline mb-4"  style="margin-left:-1.5rem;">
                       
                       {% if form.title.errors %}
                       {{ form.title( class="form-control-lg is_invalid" ) }}

@@ -17,10 +17,10 @@
     <form method="POST" action="/signup">
             {{ form.hidden_tag() }}
         <fieldset class="form-group text-center">
-            <legend class="form" style="font-family: 'Signika Negative', sans-serif;">Join us today!</legend> 
+            <legend class="form" style="font-family: 'Courgette', cursive;  font-size:1.4rem;">Join us today!</legend> 
             <!-- Username input -->
             <div class="form-outline mb-4">
-                {{ form.username.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                {{ form.username.label( class="form-control-label",style="font-family: 'Courgette', cursive; " ) }}
                 {% if form.username.errors %}
                  {{ form.username( class="form-control-lg is_invalid" ) }}
                     <div class="invalid_feedback">
@@ -29,14 +29,14 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.username( class="form-control-lg",style="font-family: 'Playball', cursive;" ) }}
+                    {{ form.username( class="form-control-lg",style="font-family: 'Courgette', cursive; " ) }}
                 {% endif %}
               
             </div> 
 
             <!-- Email input -->
             <div class="form-outline ml-4 mb-4" style="margin-left:-14px;">
-                {{ form.email.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                {{ form.email.label( class="form-control-label",style="font-family: 'Courgette', cursive; " ) }}
                 {% if form.email.errors %}
                     {{ form.email( class="form-control-lg is_invalid" ) }}
                     <div class="invalid_feedback">
@@ -45,14 +45,14 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.email( class="form-control-lg",style="font-family: 'Playball', cursive;" ) }}
+                    {{ form.email( class="form-control-lg",style="font-family: 'Courgette', cursive; " ) }}
                 {% endif %}
               
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                {{ form.password.label( class=" form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                {{ form.password.label( class=" form-control-label",style="font-family: 'Courgette', cursive; " ) }}
                 {% if form.password.errors %}
                     {{ form.password( class="form-control-lg is_invalid" ) }}
                     <div class="invalid_feedback">
@@ -61,13 +61,13 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.password( class="form-control-lg",style="font-family: 'Playball', cursive;" ) }}
+                    {{ form.password( class="form-control-lg",style="font-family: 'Courgette', cursive; " ) }}
                 {% endif %}
             </div>
 
             <!--confirm_password input -->
             <div class="form-outline mb-4" style="margin-left:-3.8rem;">
-                {{ form.confirm_password.label( class="form-control-label",style="font-family: 'Playball', cursive;" ) }}
+                {{ form.confirm_password.label( class="form-control-label",style="font-family: 'Courgette', cursive; " ) }}
                 {% if form.confirm_password.errors %}
                     {{ form.confirm_password( class="form-control-lg is_invalid" ) }}
                     <div class="invalid_feedback">
@@ -76,7 +76,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.confirm_password( class="form-control-lg",style=" font-family: 'Playball', cursive;" ) }}
+                    {{ form.confirm_password( class="form-control-lg",style="font-family: 'Courgette', cursive; " ) }}
                 {% endif %}
                
             </div>

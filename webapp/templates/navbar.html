@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-family: 'Courgette', cursive;">
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Toggle button -->
@@ -30,9 +30,11 @@
         <!-- Navbar dropdown -->
         {% if current_user.is_authenticated %}
           <li class="nav-item">
-            <a style="margin-left:1rem;text-shadow: 2px 1px 1px black; font-family: 'Playball', cursive; font-size:1.4rem;" class="nav-link" href="{{ url_for('auth.post') }}">Add Pitches</a>
+            <a class="nav-link" href="{{ url_for('auth.post') }}">Add Pitches</a>
           </li> 
-          <a href="{{ url_for('auth.signOut') }}"><button  type="button" class="btn btn-success btn-rounded" style="font-family: 'Playball', cursive; font-size:1rem;margin-left:1rem;">log out</button></a>
+          <li class="nav-item">
+          <a  class="nav-link" href="{{ url_for('auth.signOut') }}">log out</a>
+          </li>
         {% else %}
           <!-- Navbar dropdown -->
           <li class="nav-item dropdown">
@@ -43,11 +45,12 @@
               role="button"
               data-mdb-toggle="dropdown"
               aria-expanded="false"
+              
             >
               Join Us
             </a>
             <!-- Dropdown menu -->
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-family: 'Lobster', cursive; ">
               <li>
                 <a class="dropdown-item" href="{{ url_for('auth.signUp')}}">Sign Up</a>
               </li>

@@ -23,12 +23,14 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <h5><a class="card-title" href="/post/{{post.id}}">{{ post.title }}</a></h5>
-                    <p class="card-text">
+                    <h5><a class="card-title" style="font-family: 'Courgette', cursive; " href="/post/{{post.id}}">{{ post.title }}</a></h5>
+                    <p class="card-text" style="font-family: 'Lobster', cursive;">
                     {{ post.content }}
                     </p>
-                    <small class="text-muted">{{ post.author.username }}</small>
-                    <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                    <div  style="font-family: 'Lobster', cursive; " >
+                    <small class="text-muted">Author: {{ post.author.username }}</small> <br>
+                    <small class="text-muted">Date posted : {{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                    </div>
                 </div>
                 </div>
                 </div> 
